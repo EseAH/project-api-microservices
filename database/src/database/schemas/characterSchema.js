@@ -25,5 +25,8 @@ characterSchema.statics.get = async function (id) {
     .populate('homeworld', ['_id', 'name'])
     .populate('films', ['_id', 'title'])
 }
+characterSchema.statics.insert = async function (character) {
+    return await this.create(character)
+}
 
 module.exports = characterSchema;
